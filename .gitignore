@@ -1,0 +1,14 @@
+*
+!*/
+
+
+!/.gitignore
+!/LICENSE-MIT
+!/LICENSE-APACHE
+!/Readme.md
+
+!/ArcActivityExample/*.uproject
+!/ArcActivityExample/Content/**
+!/ArcActivityExample/Source/**
+!/ArcActivityExample/Config/**
+
