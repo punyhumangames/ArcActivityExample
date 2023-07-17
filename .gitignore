@@ -7,8 +7,9 @@
 !/LICENSE-APACHE
 !/Readme.md
 
-!/ArcActivityExample/*.uproject
+!/ArcActivityExample/ArcActivityExample.uproject
 !/ArcActivityExample/Content/**
 !/ArcActivityExample/Source/**
 !/ArcActivityExample/Config/**
 
+/ArcActivityExample/Plugins/ArcActivities/
