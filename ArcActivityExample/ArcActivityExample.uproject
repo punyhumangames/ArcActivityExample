@@ -19,7 +19,7 @@
 			]
 		},
 		{
-			"Name": "ArcActivitiesPlugin",
+			"Name": "ArcActivities",
 			"Enabled": true
 		}
 	]
