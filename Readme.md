@@ -4,7 +4,7 @@ This is the example project for Arc Activities.
 
 **ARC ACTIVITIES IS NOT INCLUDED IN THIS PROJECT**
 
-You can get Arc Inventory on the Unreal Engine marketplace: TODO
+You can get Arc Activities here: https://github.com/punyhumangames/ArcActivities
 
 Included is a number of examples, useful tools, and possible strategies for implementing game features using Arc Activities.  
 
