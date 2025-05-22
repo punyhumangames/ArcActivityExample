@@ -26,8 +26,8 @@ void UArcObjectiveTracker_Event::BeginPlay_Implementation()
 		};
 		ListenerHandle = WorldSubsystem->UNSAFE_DANGER_RegisterListenerInternal(EventTagToListenFor, Callback, EventPayloadStruct, EventMatchType);
 
-		GetActivityInstance()->SetStatTagStack(UIMaxValueTag, MaxCount);
-		GetActivityInstance()->SetStatTagStack(UICurrentValueTag, 0);
+		GetActivityInstance()->SetTaggedData(UIMaxValueTag, MaxCount);
+		GetActivityInstance()->SetTaggedData(UICurrentValueTag, 0);
 	}
 }
 
@@ -39,15 +39,15 @@ void UArcObjectiveTracker_Event::EndPlay_Implementation(bool Canceled)
 		ListenerHandle.Unregister();
 	}
 
-	GetActivityInstance()->ClearStatTag(UIMaxValueTag);
-	GetActivityInstance()->ClearStatTag(UICurrentValueTag);
+	GetActivityInstance()->ClearTaggedData(UIMaxValueTag);
+	GetActivityInstance()->ClearTaggedData(UICurrentValueTag);
 }
 
 void UArcObjectiveTracker_Event::MessageHandler(FGameplayTag Tag)
 {
 	Activations = FMath::Min(Activations + 1, MaxCount);
 
-	GetActivityInstance()->SetStatTagStack(UICurrentValueTag, Activations);
+	GetActivityInstance()->SetTaggedData(UICurrentValueTag, Activations);
 
 	if (Activations >= MaxCount)
 	{

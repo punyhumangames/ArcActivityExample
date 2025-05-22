@@ -29,8 +29,8 @@ void UArcObjectiveTracker_SubActivity::BeginPlay_Implementation()
 		ListenerHandle = WorldSubsystem->RegisterListener(FArcActivityStateChangedEventTag, this, &ThisClass::OnActivityStateChanged);
 		
 
-		GetActivityInstance()->SetStatTagStack(UIMaxValueTag, 1);
-		GetActivityInstance()->SetStatTagStack(UICurrentValueTag, 0);
+		GetActivityInstance()->SetTaggedData(UIMaxValueTag, 1);
+		GetActivityInstance()->SetTaggedData(UICurrentValueTag, 0);
 	}
 
 
@@ -49,8 +49,8 @@ void UArcObjectiveTracker_SubActivity::EndPlay_Implementation(bool Canceled)
 		}
 	}
 
-	GetActivityInstance()->ClearStatTag(UIMaxValueTag);
-	GetActivityInstance()->ClearStatTag(UICurrentValueTag);
+	GetActivityInstance()->ClearTaggedData(UIMaxValueTag);
+	GetActivityInstance()->ClearTaggedData(UICurrentValueTag);
 }
 
 void UArcObjectiveTracker_SubActivity::OnActivityStateChanged(FGameplayTag Channel, const FArcActivityActivityStateChanged& StateChangedPayload)
@@ -67,7 +67,7 @@ void UArcObjectiveTracker_SubActivity::OnActivityStateChanged(FGameplayTag Chann
 
 	if (bActivityEnded)
 	{
-		GetActivityInstance()->SetStatTagStack(UICurrentValueTag, 1);
+		GetActivityInstance()->SetTaggedData(UICurrentValueTag, 1);
 
 		if (bSuccess || (bActivityEnded && SuccessMode == EArcSubActivitySucceessMode::AnyCompletionSucceeds))
 		{
