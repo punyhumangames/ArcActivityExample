@@ -18,6 +18,7 @@ public class ArcActivityExample : ModuleRules
 			"ArcActivitiesPlugin",
 			"GameplayTags",
 			"UMG",
+			"NetCore",
 		});
 	}
 }
