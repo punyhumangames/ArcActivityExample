@@ -97,6 +97,8 @@ void UTP_WeaponComponent::AttachWeapon(AArcActivityExampleCharacter* TargetChara
 
 void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
+	Super::EndPlay(EndPlayReason);
+	
 	if (Character == nullptr)
 	{
 		return;
@@ -110,5 +112,4 @@ void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 		}
 	}
 
-	Super::EndPlay(EndPlayReason);
 }
