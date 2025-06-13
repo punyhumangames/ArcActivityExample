@@ -17,7 +17,7 @@ void UArcObjectiveTracker_SubActivity::BeginPlay_Implementation()
 
 	if (UArcActivityWorldSubsystem* WorldSubsystem = GetSubsystem())
 	{
-		SubActivityInstance = WorldSubsystem->StartActivity(Activity, ActivityTags);
+		SubActivityInstance = WorldSubsystem->StartActivity(Activity, { ActivityTags, {}});
 		if (PlayerTransferMode == EArcSubActivityPlayerTransferMode::InheritPlayers)
 		{
 			for (auto Player : GetActivityInstance()->GetPlayersInActivity())
